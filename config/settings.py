@@ -31,8 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
-    'chat',
     'seok.apps.SeokConfig',
     'common.apps.CommonConfig',
     'django.contrib.admin',
@@ -42,18 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-# Channels
-ASGI_APPLICATION = 'config.routing.application'
-
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
-}
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

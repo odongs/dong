@@ -22,7 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('seok/', include('seok.urls')),
     path('common/', include('common.urls')),
-    path('chat/', include('chat.urls')),
     path('data/', include('data.urls')),
 
     path('', base_views.index, name='index'),  # '/' 에 해당되는 path
