@@ -187,6 +187,10 @@ LOGGING = {
             'level': 'INFO',
             'propagate': False,
         },
+        'seok': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+        },
     }
 }
 
