@@ -7,8 +7,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'seok:index'  %}">홈</a>
             </li>
+            {% if user.is_authenticated %}
             <li>
-                {% if user.is_authenticated %}
                 <a class="nav-link" href="{% url 'data:data/django' %}">장고설치/셋팅</a>
             </li>
             <li>
@@ -17,18 +17,23 @@
             <li>
                 <a class="nav-link" href="{% url 'data:data/study' %}">끄적끄적</a>
             </li>
+            {% else %}
             <li>
-                <a class="nav-link" href="{% url 'data:data/lotto' %}">자료4</a>
-                </li>
-            <li>
-                <a class="nav-link" href="{% url 'data:data/lotto' %}">자료5</a>
-                {% else %}
                 <a class="nav-link" href="{% url 'common:login' %}">로그인</a>
             </li>
             <li>
                 <a class="nav-link" href="{% url 'common:signup' %}">회원가입</a>
-                {% endif %}
             </li>
+            <li>
+                <a class="nav-link" href="{% url 'data:data/django' %}">장고설치/셋팅</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'data:data/lotto' %}">로또크롤링</a>
+            </li>
+            <li>
+                <a class="nav-link" href="{% url 'data:data/study' %}">끄적끄적</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>
