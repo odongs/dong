@@ -24,7 +24,7 @@ def index(request):
         question_list = Question.objects.annotate(num_voter=Count('voter')).order_by('-num_voter', '-create_date')
     elif so == 'popular':  # 인기순 ( 댓글이 제일 많은 순서 )
         question_list = Question.objects.annotate(num_answer=Count('answer')).order_by('-num_answer', '-create_date')
-    elif so == 'comm':  # 인기순 ( 댓글이 제일 많은 순서 )
+    elif so == 'comm':  # 댓글순 ( 해당 글에 댓글이 제일 많은 순서 )
         question_list = Question.objects.annotate(num_answer=Count('comment')).order_by('-num_answer', '-create_date')
     else:  # recent 최신순 ( 최근 수정, 등록한 순서 )
         question_list = Question.objects.order_by('-create_date')
